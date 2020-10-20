@@ -1,3 +1,35 @@
+body {
+  font-family: sans-serif;
+  display: grid;
+  justify-items: center;
+}
+
+#loginErrorMessage {
+  margin-top: 10px;
+  color: red;
+}
+
+.showUsersButton {
+  margin-top: 30px;
+  max-width: 200px;
+}
+
+.usersList {
+  list-style: none;
+  display: grid;
+  margin-top: 0;
+  padding: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 60vw;
+  place-items: center;
+  background-color: bisque;
+}
+
+.usersList li {
+  width: 100%;
+  text-align: center;
+}
+
 .hide {
   display: none;
 }
