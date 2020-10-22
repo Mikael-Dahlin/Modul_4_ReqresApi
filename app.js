@@ -3,7 +3,7 @@ const loginFormEL = document.querySelector('#loginForm');
 const showUsersButtonEL = document.querySelector('.showUsersButton');
 const userlistEL = document.querySelector('.usersList');
 const userInfoContainerEL = document.querySelector('.userInfoContainer');
-const ErrorMessageEL = document.querySelector('#loginErrorMessage');
+const errorMessageEL = document.querySelector('#loginErrorMessage');
 const apiUrl = "https://reqres.in/";
 
 // add event listener to login form (Note!, it does not check if the password is correct, any value sent in the password field will be accepted)
@@ -20,14 +20,14 @@ loginFormEL.addEventListener('submit', (event) => {
         .then((res) => res.json())
         .then((jsonData) => {
             if(jsonData.error){
-                ErrorMessageEL.innerHTML = jsonData.error;
+                errorMessageEL.innerHTML = jsonData.error;
                 showUsersButtonEL.classList.add('hide');
                 userlistEL.innerHTML = "";
                 userInfoContainerEL.innerHTML = "";
-                ErrorMessageEL.classList.remove('hide');
+                errorMessageEL.classList.remove('hide');
             }
             else{
-                ErrorMessageEL.classList.add('hide');
+                errorMessageEL.classList.add('hide');
                 showUsersButtonEL.classList.remove('hide');
             }
         });
